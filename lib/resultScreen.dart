@@ -30,27 +30,31 @@ class ResultScreen extends StatelessWidget {
               width: width * .8,
               child: Padding(
                 padding: EdgeInsets.symmetric(
-                    vertical: height * .025, horizontal: width * .15),
+                    vertical: height * .025, horizontal: width * .03),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      children: [
-                        const Text(
-                          "Equally Divided",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 22),
+                    SizedBox(
+                      child: Expanded(
+                        child: Column(
+                          children: [
+                            const Text(
+                              "Equally Devided",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 22),
+                            ),
+                            Text(
+                              totalBill.toString(),
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 22),
+                            )
+                          ],
                         ),
-                        Text(
-                          totalBill.toString(),
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 22),
-                        )
-                      ],
+                      ),
                     ),
                     Column(
                       children: [

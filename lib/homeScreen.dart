@@ -49,12 +49,15 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: height * .01,
+            ),
             const Text(
               "Bill Split",
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             SizedBox(
-              height: height * .03,
+              height: height * .01,
             ),
             Center(
               child: Container(
@@ -65,27 +68,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: width * .8,
                 child: Padding(
                   padding: EdgeInsets.symmetric(
-                      vertical: height * .025, horizontal: width * .15),
+                      vertical: height * .025, horizontal: width * .1),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        children: [
-                          const Text(
-                            "Total",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 22),
+                      Container(
+                        child: Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                "Total",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 22),
+                              ),
+                              Text(
+                                total,
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 22),
+                              )
+                            ],
                           ),
-                          Text(
-                            total,
-                            style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 22),
-                          )
-                        ],
+                        ),
                       ),
                       Column(
                         children: [
@@ -159,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Container(
                   height: height * 0.1,
-                  width: width * 0.5,
+                  width: width * 0.45,
                   decoration: const BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -198,7 +205,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Container(
                   height: height * 0.1,
-                  width: width * 0.5,
+                  width: width * 0.45,
                   decoration: const BoxDecoration(
                       color: Colors.black,
                       borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -220,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           Text(
-                            "\$$tax",
+                            "$tax%",
                             style: customStyle(),
                           ),
                           InkWell(
